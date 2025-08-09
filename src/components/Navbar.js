@@ -35,11 +35,25 @@ const Navbar = () => {
             Home
           </Link>
           <Link 
+            to="/about" 
+            className={`navbar-link ${isActive('/about') ? 'active' : ''}`}
+            onClick={closeMenu}
+          >
+            About
+          </Link>
+          <Link 
             to="/temperature" 
             className={`navbar-link ${isActive('/temperature') ? 'active' : ''}`}
             onClick={closeMenu}
           >
             Temperature
+          </Link>
+          <Link 
+            to="/contact" 
+            className={`navbar-link ${isActive('/contact') ? 'active' : ''}`}
+            onClick={closeMenu}
+          >
+            Contact
           </Link>
         </div>
 
