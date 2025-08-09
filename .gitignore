@@ -1,0 +1,146 @@
+# ========================================
+# SmartGarden Project - Git Ignore (Vercel Ready)
+# ========================================
+
+# ========================================
+# Dependencies
+# ========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ========================================
+# Environment Variables
+# ========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ========================================
+# Python Backend
+# ========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ========================================
+# Database Files
+# ========================================
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db.backup
+*.sqlite.backup
+*.sqlite3.backup
+
+# ========================================
+# IDE & Editor Files
+# ========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ========================================
+# OS Generated Files
+# ========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ========================================
+# Logs & Temporary Files
+# ========================================
+logs
+*.log
+*.tmp
+*.temp
+temp/
+tmp/
+
+# ========================================
+# Security & Config Files
+# ========================================
+config.json
+secrets.json
+credentials.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+
+# ========================================
+# Testing & Coverage
+# ========================================
+coverage/
+*.lcov
+.nyc_output
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+
+# ========================================
+# Cache & Build Artifacts
+# ========================================
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+
+# ========================================
+# Archive Files
+# ========================================
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ========================================
+# Project Specific
+# ========================================
+api/temperature.db
+api/temperature.db-journal
+api/*.db
+api/*.sqlite
+api/*.sqlite3
+
+# ========================================
+# End of SmartGarden .gitignore
+# ======================================== 
