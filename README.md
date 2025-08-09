@@ -14,8 +14,14 @@ SmartGarden/
 │   └── temperature.db    # SQLite database
 ├── src/                   # Frontend React (Source)
 │   ├── components/        # React components
+│   │   ├── Dashboard.js   # System dashboard component
+│   │   ├── Navbar.js      # Navigation component
+│   │   └── TemperatureWidget.js # Live temperature widget
 │   ├── pages/            # Page components
+│   │   ├── Home.js       # Home page
+│   │   └── Temperature.js # Temperature monitoring page
 │   ├── services/         # API services
+│   │   └── api.js        # API service functions
 │   └── ...
 ├── public/                # Frontend React (Public)
 ├── package.json           # Frontend dependencies
@@ -152,6 +158,7 @@ curl -X POST "http://localhost:8000/api/temperature/generate-dummy?count=20"
 * **Consistent Card Heights** - Uniform dashboard appearance
 * **Auto-refresh Functionality** - Data updates automatically
 * **Error Handling** - Graceful error display and recovery
+* **Responsive Layout** - Optimized for all device sizes
 
 ## 📝 Notes
 

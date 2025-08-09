@@ -110,7 +110,7 @@
 }
 
 .dot:nth-child(2) {
-  top: 20%;
+  top: 60%;
   right: 20%;
   animation-delay: 0.5s;
 }
@@ -118,7 +118,6 @@
 .dot:nth-child(3) {
   bottom: 20%;
   left: 50%;
-  transform: translateX(-50%);
   animation-delay: 1s;
 }
 
@@ -128,59 +127,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.2); }
-}
-
-/* Features Section */
-.features {
-  padding: 6rem 0;
-  background-color: var(--bg-primary);
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  color: var(--text-primary);
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.feature-card {
-  background-color: var(--bg-primary);
-  border-radius: 1rem;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.feature-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.feature-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-}
-
-.feature-card p {
-  color: var(--text-secondary);
-  line-height: 1.6;
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
 }
 
 /* Stats Section */
@@ -212,31 +160,6 @@
   opacity: 0.9;
 }
 
-/* CTA Section */
-.cta {
-  padding: 6rem 0;
-  background-color: var(--bg-secondary);
-}
-
-.cta-content {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.cta-content h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-}
-
-.cta-content p {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero .container {
@@ -266,19 +189,7 @@
     max-width: 280px;
   }
 
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .cta-content h2 {
-    font-size: 2rem;
   }
 } 
