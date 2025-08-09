@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import axios from 'axios';
+import { temperatureAPI } from '../services/api';
 import config from '../config';
 import './Temperature.css';
 
@@ -11,42 +11,39 @@ const Temperature = () => {
   const [error, setError] = useState(null);
   const [lastUpdated, setLastUpdated] = useState(null);
 
-  // API base URL from config
-  const API_BASE_URL = config.API_BASE_URL;
-
   const fetchCurrentTemperature = useCallback(async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/temperature`);
-      setCurrentData(response.data);
+      const data = await temperatureAPI.getCurrentTemperature();
+      setCurrentData(data);
       setLastUpdated(new Date());
       setError(null);
     } catch (err) {
       setError('Failed to fetch current temperature data');
       console.error('Error fetching current temperature:', err);
     }
-  }, [API_BASE_URL]);
+  }, []);
 
   const fetchTemperatureHistory = useCallback(async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/temperature/history`);
-      setHistoryData(response.data.history || []);
+      const data = await temperatureAPI.getTemperatureHistory();
+      setHistoryData(data.history || []);
       setError(null);
     } catch (err) {
       setError('Failed to fetch temperature history');
       console.error('Error fetching temperature history:', err);
     }
-  }, [API_BASE_URL]);
+  }, []);
 
   const fetchTemperatureStats = useCallback(async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/temperature/stats`);
-      setStatsData(response.data);
+      const data = await temperatureAPI.getTemperatureStats();
+      setStatsData(data);
       setError(null);
     } catch (err) {
       setError('Failed to fetch temperature statistics');
       console.error('Error fetching temperature stats:', err);
     }
-  }, [API_BASE_URL]);
+  }, []);
 
   const fetchAllData = useCallback(async () => {
     setLoading(true);
@@ -73,7 +70,7 @@ const Temperature = () => {
 
   const getTemperatureColor = (temp) => {
     if (temp < config.TEMPERATURE_THRESHOLDS.COLD) return '#3b82f6'; // Cold - Blue
-    if (temp > config.TEMPERATURE_THRESHOLDS.HOT) return '#ef4444'; // Hot - Red
+    if (temp > config.TEMPERATURE_THRESHOLDS.HOT) return '#1d4ed8'; // Hot - Blue
     return '#10b981'; // Normal - Green
   };
 

@@ -22,9 +22,9 @@ code {
 
 /* Custom CSS Variables */
 :root {
-  --primary-color: #10b981;
-  --primary-dark: #059669;
-  --secondary-color: #3b82f6;
+  --primary-color: #3b82f6;
+  --primary-dark: #2563eb;
+  --secondary-color: #1d4ed8;
   --accent-color: #f59e0b;
   --text-primary: #1e293b;
   --text-secondary: #64748b;

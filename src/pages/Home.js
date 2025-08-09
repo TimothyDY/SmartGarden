@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TemperatureWidget from '../components/TemperatureWidget';
+import Dashboard from '../components/Dashboard';
 import './Home.css';
 
 const Home = () => {
@@ -21,9 +23,6 @@ const Home = () => {
               <Link to="/temperature" className="btn btn-primary">
                 View Temperature Data
               </Link>
-              <Link to="/contact" className="btn btn-secondary">
-                Get Started
-              </Link>
             </div>
           </div>
           <div className="hero-image">
@@ -35,48 +34,15 @@ const Home = () => {
                 <span className="dot"></span>
               </div>
             </div>
+            <div className="temperature-widget-container">
+              <TemperatureWidget />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="features">
-        <div className="container">
-          <h2 className="section-title text-center">Why Choose SmartGarden?</h2>
-          <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">🌡️</div>
-              <h3>Real-time Monitoring</h3>
-              <p>Monitor temperature, humidity, and environmental conditions in real-time with our advanced sensors.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">📱</div>
-              <h3>Mobile Control</h3>
-              <p>Control your smart home devices from anywhere using our intuitive mobile application.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🔒</div>
-              <h3>Secure & Private</h3>
-              <p>Your data is protected with enterprise-grade security and privacy controls.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">⚡</div>
-              <h3>Energy Efficient</h3>
-              <p>Optimize energy consumption and reduce costs with intelligent automation systems.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🤖</div>
-              <h3>AI-Powered</h3>
-              <p>Advanced AI algorithms learn your preferences and optimize your home environment automatically.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🔧</div>
-              <h3>Easy Installation</h3>
-              <p>Quick and simple setup process with our plug-and-play smart home solutions.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Dashboard Section */}
+      <Dashboard />
 
       {/* Stats Section */}
       <section className="stats">
@@ -98,19 +64,6 @@ const Home = () => {
               <div className="stat-number">24/7</div>
               <div className="stat-label">Support</div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="cta">
-        <div className="container">
-          <div className="cta-content">
-            <h2>Ready to Transform Your Home?</h2>
-            <p>Join thousands of satisfied customers who have already upgraded to smart living.</p>
-            <Link to="/contact" className="btn btn-primary">
-              Contact Us Today
-            </Link>
           </div>
         </div>
       </section>
