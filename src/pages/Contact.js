@@ -47,9 +47,9 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="contact-hero">
         <div className="container">
-          <h1 className="contact-title">Contact Us</h1>
+          <h1 className="contact-title">Get in Touch</h1>
           <p className="contact-subtitle">
-            Get in touch with our team for support, questions, or feedback about SmartGarden
+            Contact our team for support, questions, or feedback about SmartGarden
           </p>
         </div>
       </section>
@@ -132,7 +132,6 @@ const Contact = () => {
 
             {/* Contact Information */}
             <div className="contact-info-section">
-              <h2>Get in Touch</h2>
               <div className="contact-info">
                 <div className="info-item">
                   <div className="info-icon">📧</div>
@@ -167,19 +166,6 @@ const Contact = () => {
                     <h3>Response Time</h3>
                     <p>We typically respond within 24 hours during business days.</p>
                   </div>
-                </div>
-              </div>
-
-              <div className="contact-cta">
-                <h3>Need Immediate Help?</h3>
-                <p>
-                  Check out our documentation or visit the temperature monitoring page 
-                  to see our system in action.
-                </p>
-                <div className="cta-buttons">
-                  <a href="/temperature" className="btn btn-secondary">
-                    View Temperature Data
-                  </a>
                 </div>
               </div>
             </div>

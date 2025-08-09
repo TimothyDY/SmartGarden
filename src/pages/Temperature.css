@@ -124,6 +124,14 @@
   margin-bottom: 0.25rem;
 }
 
+/* Location card specific styling */
+.location-card .data-value {
+  font-size: 1.8rem;
+  font-weight: 600;
+  word-wrap: break-word;
+  line-height: 1.2;
+}
+
 .data-unit {
   color: var(--text-secondary);
   font-size: 0.9rem;
@@ -197,26 +205,27 @@
   overflow-x: auto;
   border-radius: 1rem;
   box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
 }
 
 .history-table {
   width: 100%;
   border-collapse: collapse;
   background-color: var(--bg-primary);
-  border-radius: 1rem;
-  overflow: hidden;
 }
 
 .history-table thead {
-  background-color: var(--bg-secondary);
+  background-color: var(--primary-color);
+  color: white;
 }
 
 .history-table th {
   padding: 1rem;
   text-align: left;
   font-weight: 600;
-  color: var(--text-primary);
-  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .history-table td {
@@ -235,7 +244,7 @@
 
 /* Refresh Section */
 .refresh-section {
-  padding: 4rem 0;
+  padding: 2rem 0;
   background-color: var(--bg-secondary);
   text-align: center;
 }
@@ -251,9 +260,7 @@
   }
 
   .data-card {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
+    padding: 1.5rem;
   }
 
   .stats-grid {
@@ -266,7 +273,7 @@
 
   .history-table th,
   .history-table td {
-    padding: 0.75rem 0.5rem;
+    padding: 0.75rem;
   }
 
   .current-data h2,
@@ -284,5 +291,10 @@
   .error-banner .container {
     flex-direction: column;
     gap: 1rem;
+  }
+
+  /* Location card mobile styling */
+  .location-card .data-value {
+    font-size: 1.5rem;
   }
 } 
