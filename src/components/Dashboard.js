@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { temperatureAPI, healthAPI } from '../services/api';
+import { temperatureAPI } from '../services/api';
 import './Dashboard.css';
 
 const Dashboard = () => {
   const [currentData, setCurrentData] = useState(null);
   const [statsData, setStatsData] = useState(null);
-  const [apiHealth, setApiHealth] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const fetchDashboardData = async () => {
     try {
       setLoading(true);
-      const [current, stats, health] = await Promise.allSettled([
+      const [current, stats] = await Promise.allSettled([
         temperatureAPI.getCurrentTemperature(),
-        temperatureAPI.getTemperatureStats(),
-        healthAPI.checkHealth()
+        temperatureAPI.getTemperatureStats()
       ]);
 
       if (current.status === 'fulfilled') {
@@ -25,10 +23,6 @@ const Dashboard = () => {
 
       if (stats.status === 'fulfilled') {
         setStatsData(stats.value);
-      }
-
-      if (health.status === 'fulfilled') {
-        setApiHealth(health.value);
       }
 
       setError(null);
