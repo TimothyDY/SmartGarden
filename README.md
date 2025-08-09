@@ -1,91 +1,114 @@
-# 🌱 SmartGarden - Smart Home Project
+# 🌿 SmartGarden - Smart Home Temperature Monitoring
 
-Project SmartGarden adalah aplikasi smart home yang terdiri dari **API backend** (Python/FastAPI) dan **frontend** (React) untuk monitoring temperature dan humidity secara real-time.
+SmartGarden is a cutting-edge smart home solution that delivers real-time temperature and humidity monitoring capabilities. Built with a **Python/FastAPI backend** and a **React frontend**, it offers a streamlined, user-friendly interface for environmental monitoring.
 
-## 📁 Struktur Project
+## 📂 Project Structure
 
 ```
 SmartGarden/
 ├── api/                    # Backend API (FastAPI/Flask)
-│   ├── app.py             # Aplikasi utama FastAPI
-│   ├── flask_app.py       # Aplikasi Flask (WSGI compatible)
-│   ├── requirements.txt   # Dependencies Python
+│   ├── app.py             # Main FastAPI application
+│   ├── flask_app.py       # Flask application (WSGI compatible)
+│   ├── requirements.txt   # Python dependencies
 │   ├── wsgi.py           # WSGI configuration
-│   └── temperature.db    # Database SQLite
+│   └── temperature.db    # SQLite database
 ├── src/                   # Frontend React (Source)
+│   ├── components/        # React components
+│   ├── pages/            # Page components
+│   ├── services/         # API services
+│   └── ...
 ├── public/                # Frontend React (Public)
 ├── package.json           # Frontend dependencies
 ├── vercel.json           # Vercel deployment config
-└── README.md             # File ini
+└── README.md             # This file
 ```
 
-## 🚀 Cara Menjalankan Project
+## ⚡ Quick Start
 
 ### Prerequisites
 
-* **Python 3.8+** (untuk backend)
-* **Node.js 14+** (untuk frontend)
-* **npm** atau **yarn** (package manager)
+* **Python 3.8+** (for backend)
+* **Node.js 14+** (for frontend)
+* **npm** or **yarn** (package manager)
 
-### Langkah 1: Setup Backend (API)
+### Backend Setup (API)
 
-1. **Buka terminal/command prompt**
-2. **Masuk ke folder api:**  
-cd api
-3. **Install dependencies Python:**  
-pip install -r requirements.txt
-4. **Jalankan API server:**  
-uvicorn app:app --reload --host 0.0.0.0 --port 8000
-5. **API akan berjalan di:** `http://localhost:8000`
-6. **Dokumentasi API:** `http://localhost:8000/docs`
+1. **Navigate to api folder:**  
+   ```bash
+   cd api
+   ```
 
-### Langkah 2: Setup Frontend (React)
+2. **Install Python dependencies:**  
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-1. **Buka terminal/command prompt baru**
-2. **Masuk ke folder root:**  
-cd SmartGarden
-3. **Install dependencies Node.js:**  
-npm install
-4. **Jalankan React development server:**  
-npm start
-5. **Frontend akan berjalan di:** `http://localhost:3000`
+3. **Run API server:**  
+   ```bash
+   uvicorn app:app --reload --host 0.0.0.0 --port 8000
+   ```
 
-## 📊 Fitur yang Tersedia
+4. **API will be available at:** `http://localhost:8000`
+5. **API Documentation:** `http://localhost:8000/docs`
+
+### Frontend Setup (React)
+
+1. **Navigate to project root:**  
+   ```bash
+   cd SmartGarden
+   ```
+
+2. **Install Node.js dependencies:**  
+   ```bash
+   npm install
+   ```
+
+3. **Start React development server:**  
+   ```bash
+   npm start
+   ```
+
+4. **Frontend will be available at:** `http://localhost:3000`
+
+## 🔥 Features
 
 ### Backend API (FastAPI/Flask)
 
-* ✅ RESTful API untuk data temperature dan humidity
-* ✅ Database SQLite dengan SQLAlchemy
+* ✅ RESTful API for temperature and humidity data
+* ✅ SQLite database with SQLAlchemy ORM
 * ✅ Automatic API documentation (Swagger UI)
 * ✅ Real-time data monitoring
-* ✅ Dummy data generation untuk testing
-* ✅ CORS enabled untuk React frontend
-* ✅ WSGI compatible untuk deployment
+* ✅ Dummy data generation for testing
+* ✅ CORS enabled for React frontend
+* ✅ WSGI compatible for deployment
+* ✅ Health check endpoint
 
 ### Frontend (React)
 
-* ✅ Home Page dengan landing page
-* ✅ About Page dengan informasi perusahaan
-* ✅ Contact Page dengan form kontak
-* ✅ Temperature Page dengan real-time monitoring
-* ✅ Responsive design
-* ✅ Auto-refresh data
+* ✅ **Home Page** - Landing page with live temperature widget
+* ✅ **System Dashboard** - Real-time monitoring dashboard
+* ✅ **Temperature Page** - Detailed temperature monitoring and history
+* ✅ **Live Temperature Widget** - Real-time temperature display
+* ✅ **Responsive Design** - Mobile-friendly interface
+* ✅ **Auto-refresh** - Data updates every 30 seconds
+* ✅ **Modern UI** - Clean blue color scheme
 
-## 🔧 Endpoint API
+## 🔌 API Endpoints
 
-| Method | Endpoint                        | Deskripsi                 |
-| ------ | ------------------------------- | ------------------------- |
-| GET    | /                               | Informasi API             |
-| GET    | /api/health                     | Health check              |
-| GET    | /api/temperature                | Data temperature saat ini |
-| GET    | /api/temperature/history        | Riwayat temperature       |
-| GET    | /api/temperature/stats          | Statistik temperature     |
-| POST   | /api/temperature/generate-dummy | Generate data dummy       |
+| Method | Endpoint                        | Description                 |
+| ------ | ------------------------------- | --------------------------- |
+| GET    | /                               | API information             |
+| GET    | /api/health                     | Health check                |
+| GET    | /api/temperature                | Current temperature data    |
+| GET    | /api/temperature/history        | Temperature history         |
+| GET    | /api/temperature/stats          | Temperature statistics       |
+| POST   | /api/temperature/generate-dummy | Generate dummy data         |
 
 ## 🧪 Testing
 
-### Test API
+### API Testing
 
+```bash
 # Health check
 curl http://localhost:8000/api/health
 
@@ -94,40 +117,51 @@ curl http://localhost:8000/api/temperature
 
 # Generate dummy data
 curl -X POST "http://localhost:8000/api/temperature/generate-dummy?count=20"
+```
 
-### Test Frontend
+### Frontend Testing
 
-1. Pastikan API berjalan di port 8000
-
+1. Ensure API is running on port 8000
+2. Open `http://localhost:3000` in your browser
+3. Navigate through the pages to test functionality
 
 ## 🛠️ Technologies
 
 ### Backend
 
 * **Python 3.8+**
-* **FastAPI** \- Modern web framework
-* **Flask** \- WSGI compatible framework
-* **SQLAlchemy** \- Database ORM
-* **Pydantic** \- Data validation
-* **Uvicorn** \- ASGI server
-* **SQLite** \- Database
+* **FastAPI** - Modern web framework
+* **Flask** - WSGI compatible framework
+* **SQLAlchemy** - Database ORM
+* **Pydantic** - Data validation
+* **Uvicorn** - ASGI server
+* **SQLite** - Database
 
 ### Frontend
 
 * **React 18**
 * **JavaScript (ES6+)**
-* **CSS3** \- Styling
-* **Axios** \- HTTP client
-* **React Router** \- Navigation
+* **CSS3** - Modern styling with CSS Grid and Flexbox
+* **Axios** - HTTP client
+* **React Router** - Navigation
+
+## 🎨 Design Features
+
+* **Modern Blue Color Scheme** - Professional and clean appearance
+* **Live Temperature Widget** - Real-time data display
+* **Consistent Card Heights** - Uniform dashboard appearance
+* **Auto-refresh Functionality** - Data updates automatically
+* **Error Handling** - Graceful error display and recovery
 
 ## 📝 Notes
 
-* **Database**: SQLite file akan dibuat otomatis saat pertama kali menjalankan API
-* **Dummy Data**: 10 record dummy akan dibuat otomatis saat startup
-* **Auto-refresh**: Frontend akan refresh data setiap 30 detik
-* **CORS**: Backend sudah dikonfigurasi untuk menerima request dari frontend
-* **Deployment**: Backend di PythonAnywhere, Frontend di Vercel
+* **Database**: SQLite file is created automatically on first API run
+* **Dummy Data**: 10 dummy records are created automatically on startup
+* **Auto-refresh**: Frontend refreshes data every 30 seconds
+* **CORS**: Backend is configured to accept requests from frontend
+* **Deployment**: Backend on PythonAnywhere, Frontend on Vercel
+* **API URL**: Configured to use `https://cr4kn.pythonanywhere.com`
 
 ---
 
-**Happy Coding! 🌱** # SmartGarden
+**Happy Monitoring! 🌿** # SmartGarden
